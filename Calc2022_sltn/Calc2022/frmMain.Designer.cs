@@ -35,7 +35,7 @@ namespace Calc2022
             // lblResult
             // 
             this.lblResult.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblResult.Location = new System.Drawing.Point(56, 29);
+            this.lblResult.Location = new System.Drawing.Point(70, 36);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(317, 67);
             this.lblResult.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace Calc2022
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 514);
+            this.ClientSize = new System.Drawing.Size(412, 529);
             this.Controls.Add(this.lblResult);
             this.Name = "frmMain";
             this.Text = "Form1";

@@ -16,22 +16,38 @@ namespace Calc2022
         {
             public char Content;
             public bool IsBold;
-            public BtnStruct(char content, bool isBold)
+            public bool IsNumber;
+            public bool IsDecimalSeparator;
+            public bool IsPlusMinusSign;
+            public bool IsOperator;
+            public bool IsEqualSign;
+            public BtnStruct(char content, bool isBold,
+                bool isNumber = false, bool isDecimalSeparator = false,
+                bool isPlusMinusSign = false, bool isOperator = false, bool isEqualSign = false)
             {
                 this.Content = content;
                 this.IsBold = isBold;
+                this.IsNumber = isNumber;
+                this.IsDecimalSeparator = isDecimalSeparator;
+                this.IsPlusMinusSign = isPlusMinusSign;
+                this.IsOperator = isOperator;
+                this.IsEqualSign = isEqualSign;
+            }
+            public override string ToString()
+            {
+                return Content.ToString();
             }
         }
 
-        public BtnStruct[,] buttons =
-        {
-            { new BtnStruct('%', false), new BtnStruct('x', false), new BtnStruct('C', false), new BtnStruct('<', false) },
-            { new BtnStruct('x', false), new BtnStruct('x', false), new BtnStruct('x', false), new BtnStruct('/', false) },
-            { new BtnStruct('7', false), new BtnStruct('8', false), new BtnStruct('9', false), new BtnStruct('x', false) },
-            { new BtnStruct('4', false), new BtnStruct('5', false), new BtnStruct('6', false), new BtnStruct('-', false) },
-            { new BtnStruct('1', false), new BtnStruct('2', false), new BtnStruct('3', false), new BtnStruct('+', false) },
-            { new BtnStruct('x', false), new BtnStruct('0', false), new BtnStruct(',', false), new BtnStruct('=', false) },
-        };
+        private BtnStruct[,] buttons =
+            {
+                { new BtnStruct('%', false), new BtnStruct('Œ', false), new BtnStruct('C', false), new BtnStruct('←', false) },
+                { new BtnStruct('⅟', false), new BtnStruct('²', false), new BtnStruct('√', false), new BtnStruct('/', false, false, false, false, true) },
+                { new BtnStruct('7', true, true), new BtnStruct('8', true, true), new BtnStruct('9', true, true), new BtnStruct('x', false, false, false, false, true) },
+                { new BtnStruct('4', true, true), new BtnStruct('5', true, true), new BtnStruct('6', true, true), new BtnStruct('-', false, false, false, false, true) },
+                { new BtnStruct('1', true, true), new BtnStruct('2', true, true), new BtnStruct('3', true, true), new BtnStruct('+', false, false, false, false, true) },
+                { new BtnStruct('±', false, false, false, true), new BtnStruct('0', true, true), new BtnStruct(',', false, false, true), new BtnStruct('=', false, false, false, false, false, true) }
+            };
 
         public frmMain()
         {

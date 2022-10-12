@@ -1,7 +1,7 @@
 ﻿
-namespace Calc2022
+namespace Calculator
 {
-    partial class frmMain
+    partial class FormMain
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -39,7 +39,7 @@ namespace Calc2022
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
 
         }

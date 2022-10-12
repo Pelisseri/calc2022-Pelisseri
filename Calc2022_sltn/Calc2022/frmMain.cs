@@ -12,6 +12,19 @@ namespace Calc2022
 {
     public partial class frmMain : Form
     {
+        private RichTextBox resultBox;
+        private int resultBoxTextSize = 24;
+        private decimal operand1, operand2, result;
+        private char lastOperator = ' ';
+        private BtnStruct lastButtonClicked;
+        private bool isBackSpaceEnabled = false;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern int SendMessage(IntPtr hWnd, uint wMsg, UIntPtr wParam, IntPtr lParam);
+
         public struct BtnStruct
         {
             public char Content;
@@ -56,7 +69,31 @@ namespace Calc2022
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            MakeResultBox();
             MakeButtons(buttons.GetLength(0), buttons.GetLength(1));
+        }
+
+        private void MakeResultBox()
+        {
+            resultBox=new RichTextBox();
+            resultBox.ReadOnly = true;
+            SendMessage(resultBox.Handle, 0xd3, (UIntPtr)0x3, (IntPtr)0x00080008);
+            resultBox.SelectionAlignment = HorizontalAlignment.Right;
+            resultBox.Font = new Font("Segoe UI", resultBoxTextSize, FontStyle.Bold);
+            resultBox.Width = this.Width - 16;
+            resultBox.Height = 120;
+            resultBox.Text = "0";
+            resultBox.TabStop = false;
+            resultBox.TextChanged += ResultBox_TextChanged;
+            resultBox.GotFocus += ResultBox_HideCaretHandler;
+            resultBox.MouseDown += ResultBox_HideCaretHandler;
+            resultBox.SelectionChanged += ResultBox_HideCaretHandler;
+            this.Controls.Add(resultBox);
+        }
+
+        private void ResultBox_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void MakeButtons(int rows, int cols)
@@ -82,6 +119,11 @@ namespace Calc2022
                 posY += btnHeight;
                 posX = 0;
             }
+        }
+
+        private void ResultBox_HideCaretHandler(object sender, EventArgs e)
+        {
+            HideCaret(resultBox.Handle);
         }
     }
 }

@@ -8,3 +8,12 @@ C:\Users\samue\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2
 C:\Users\samue\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.exe
 C:\Users\samue\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.pdb
 C:\Users\samue\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.frmMain.resources
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\bin\Debug\Calc2022.exe.config
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\bin\Debug\Calc2022.exe
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\bin\Debug\Calc2022.pdb
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.csprojAssemblyReference.cache
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.frmMain.resources
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.Properties.Resources.resources
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.csproj.GenerateResource.cache
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.exe
+C:\Users\s.pelisseri.2289\Desktop\calc2022-Pelisseri\Calc2022_sltn\Calc2022\obj\Debug\Calc2022.pdb

@@ -178,6 +178,27 @@ namespace Calculator
                             }
                             isBackSpaceEnabled = true;
                             break;
+                        case 'Œ':
+                            if (!lastButtonClicked.IsEqualSign)
+                                resultBox.Text = "0";
+                            else ClearAll();
+                            isBackSpaceEnabled = false;
+                            break;
+                        case '⅟':
+                            result = Convert.ToInt32(resultBox.Text);
+                            result = 1 / result;
+                            resultBox.Text = result.ToString();
+                            break;
+                        case '²':
+                            result = Convert.ToInt32(resultBox.Text);
+                            result *= result;
+                            resultBox.Text = result.ToString();
+                            break;
+                        case '√':
+                            result = Convert.ToInt32(resultBox.Text);
+                            result =Convert.ToDecimal(Math.Sqrt((double)result));
+                            resultBox.Text = result.ToString();
+                            break;
                         default:
                             ManageOperator(btnStruct);
                             break;

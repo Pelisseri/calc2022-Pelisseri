@@ -185,19 +185,38 @@ namespace Calculator
                             isBackSpaceEnabled = false;
                             break;
                         case '⅟':
-                            result = Convert.ToInt32(resultBox.Text);
+                            result = Convert.ToDecimal(resultBox.Text);
                             result = 1 / result;
                             resultBox.Text = result.ToString();
                             break;
                         case '²':
-                            result = Convert.ToInt32(resultBox.Text);
+                            result = Convert.ToDecimal(resultBox.Text);
                             result *= result;
                             resultBox.Text = result.ToString();
                             break;
                         case '√':
-                            result = Convert.ToInt32(resultBox.Text);
+                            result = Convert.ToDecimal(resultBox.Text);
                             result =Convert.ToDecimal(Math.Sqrt((double)result));
                             resultBox.Text = result.ToString();
+                            break;
+                        case '%':
+                            if(lastButtonClicked.Content!='%')
+                                if(lastButtonClicked.IsPlusMinusSign)
+                                {
+                                    operand2 = operand1 * operand1 / 100;
+                                    resultBox.Text = operand2.ToString();
+                                }
+                                else if(lastButtonClicked.IsOperator)
+                                {
+                                    operand2 = operand1 / 100;
+                                    resultBox.Text = operand2.ToString();
+                                }
+                                else if(lastButtonClicked.IsNumber)
+                                {
+                                    operand2 = Convert.ToDecimal(resultBox.Text);
+                                    operand2 = operand2 * operand1 / 100;
+                                    resultBox.Text = operand2.ToString();
+                                }
                             break;
                         default:
                             ManageOperator(btnStruct);
@@ -240,7 +259,12 @@ namespace Calculator
                         result = operand1 * operand2;
                         break;
                     case '/':
-                        result = operand1 / operand2;
+                        if (operand2 == 0)
+                        {
+                            MessageBox.Show("Attenzione! Impossibile dividere per zero.");
+                            ClearAll();
+                        }
+                        else result = operand1 / operand2;
                         break;
                 }
                 operand1 = result;

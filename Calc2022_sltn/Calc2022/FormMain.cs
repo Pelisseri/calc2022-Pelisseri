@@ -274,7 +274,15 @@ namespace Calculator
                     if (lastButtonClicked.IsEqualSign)
                         operand2 = 0;
                 }
-                resultBox.Text = result.ToString();
+                string stResult = result.ToString();
+                if(stResult.Contains(","))
+                {
+                    while (stResult.Substring(stResult.Length - 1) == "0")
+                        stResult = stResult.Substring(0, stResult.Length - 1);
+                    if(stResult.Substring(stResult.Length-1)==",")
+                        stResult = stResult.Substring(0, stResult.Length - 1);
+                }
+                resultBox.Text = stResult;
             }
         }
     }

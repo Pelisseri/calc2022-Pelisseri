@@ -196,8 +196,16 @@ namespace Calculator
                             break;
                         case '√':
                             result = Convert.ToDecimal(resultBox.Text);
-                            result =Convert.ToDecimal(Math.Sqrt((double)result));
-                            resultBox.Text = result.ToString();
+                            if(result>=0)
+                            {
+                                result = Convert.ToDecimal(Math.Sqrt((double)result));
+                                resultBox.Text = result.ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Attenzione! Radice impossibile.");
+                                ClearAll();
+                            }
                             break;
                         case '%':
                             if(lastButtonClicked.Content!='%')
@@ -219,6 +227,7 @@ namespace Calculator
                                 }
                             break;
                         default:
+                        if(btnStruct.IsOperator || btnStruct.IsEqualSign)
                             ManageOperator(btnStruct);
                             break;
                     }
